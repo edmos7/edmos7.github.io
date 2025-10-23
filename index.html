@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | E. Mosca</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Share+Tech+Mono&display=swap');
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #0a0015 0%, #020007 100%);
+      color: #e0d6ff;
+      font-family: 'Share Tech Mono', monospace;
+      line-height: 1.6;
+      padding: 2rem;
+      max-width: 900px;
+      margin-inline: auto;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* CRT scanline and flicker effect */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.03) 0px,
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 2px,
+        transparent 4px
+      );
+      mix-blend-mode: overlay;
+      animation: flicker 2s infinite steps(60);
+      z-index: 100;
+    }
+
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+      }
+      20%, 24%, 55% {
+        opacity: 0.8;
+      }
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      color: #ff3366;
+      font-size: 3rem;
+      text-shadow: 0 0 10px #ff0055, 0 0 20px #6600ff;
+      margin-bottom: 0.2rem;
+    }
+
+    header p {
+      color: #8b8bff;
+      font-size: 1.2rem;
+      text-shadow: 0 0 5px #4400aa;
+    }
+
+    h2 {
+      color: #8b3eff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 3rem;
+      border-left: 4px solid #ff3366;
+      padding-left: 0.75rem;
+      text-shadow: 0 0 8px #8b3eff;
+    }
+
+    h3 {
+      color: #66aaff;
+      margin-top: 1.5rem;
+      text-shadow: 0 0 5px #0055ff;
+    }
+
+    a {
+      color: #ff3366;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #66aaff;
+      text-shadow: 0 0 10px #66aaff;
+    }
+
+    blockquote {
+      border-left: 3px solid #6600ff;
+      padding-left: 1rem;
+      color: #ccc;
+      font-style: italic;
+      margin: 1.5rem 0;
+      text-shadow: 0 0 3px #6600ff;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin: 0.3rem 0;
+    }
+
+    .neon-box {
+      border: 1px solid rgba(255, 51, 102, 0.3);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+      background: rgba(10, 0, 20, 0.3);
+      box-shadow: 0 0 12px rgba(255, 51, 102, 0.2), inset 0 0 20px rgba(100, 0, 200, 0.1);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 51, 102, 0.2);
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #8b3eff;
+    }
+
+    .quote {
+      margin-top: 3rem;
+      text-align: center;
+      color: #555;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Eduardo Mosca</h1>
+    <p>AI and Computer Science</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <blockquote>
+      I'm currently a MSc Data Science Student in Milan, Italy.  
+      Computer science and AI are a big part of my life, and I hope to keep working close to these fields for a long time.  
+      I have a lot of fun working on deep learning, especially when the results can be deployed in the real world and make a direct impact.  
+      A non-exhaustive list of AI areas in which I have a particular interest: Reinforcement Learning, World Models, Computer Vision, Robotics, Signal Processing.
+    </blockquote>
+
+    <h2>⚙️ Skills & Tools</h2>
+    <div class="neon-box">
+      <ul>
+        <li><strong>Programming Languages:</strong> Python, R, SQL</li>
+        <li><strong>Frameworks & Libraries (Python):</strong> PyTorch, TensorFlow, sklearn, numpy, pandas, gymnasium</li>
+        <li><strong>Spoken Languages:</strong> Italian, English, French, Spanish</li>
+        <li><strong>Other:</strong> Git, AWS, Databricks</li>
+      </ul>
+    </div>
+
+    <h2>🚀 Featured Projects</h2>
+    <div class="neon-box">
+      <h3><a href="#">Project Title 1</a></h3>
+      <p><em>(left empty to fill in later)</em></p>
+      <p><strong>Tech Stack:</strong></p>
+    </div>
+
+    <div class="neon-box">
+      <h3><a href="#">Project Title 2</a></h3>
+      <p><em>(left empty to fill in later)</em></p>
+      <p><strong>Tech Stack:</strong></p>
+    </div>
+
+    <h2>🧠 Experience</h2>
+    <div class="neon-box">
+      <p><strong>Thesis Internship – DataReply</strong><br>
+      <em>Aug '23 – Jan '24</em><br>
+      Developed program for systematically finding data quality anomaly patterns in any given dataset for better maintenance.<br>
+      <strong>Tech Stack:</strong> Python (PyOD, sklearn, pandas), AWS, Docker, Databricks, Git
+      </p>
+
+      <p><strong>Intern Software Developer – Integrated Aerospace Systems</strong><br>
+      <em>Jun '23 – Jul '23</em><br>
+      Developed vision-enabled overnight surveillance and server room temperature monitoring programs.<br>
+      <strong>Tech Stack:</strong> Python (ultralytics, OpenCV, SQLAlchemy, PyODBC)
+      </p>
+    </div>
+
+    <h2>🪩 Education</h2>
+    <div class="neon-box">
+      <p><strong>MSc / Data Science</strong> – Università degli Studi di Milano-Bicocca<br>
+      <em>September 2024 → Summer 2026 (at the earliest)</em><br>
+      GPA: 29.33/30 (as of October 2025)
+      </p>
+
+      <p><strong>BSc / Management and Computer Science</strong> – LUISS Guido Carli<br>
+      <em>September 2021 → July 2024</em><br>
+      Graduated (107/110)
+      </p>
+    </div>
+
+    <h2>📫 Contact</h2>
+    <div class="neon-box">
+      <p>
+        ✉️ <a href="mailto:eduamosca7@gmail.com">eduamosca7@gmail.com</a><br>
+        🧱 <a href="https://github.com/edmos7">github.com/edmos7</a><br>
+        💼 <a href="https://linkedin.com/in/eduardo-mosca/">linkedin.com/in/eduardo-mosca/</a><br>
+        🤗 <a href="https://huggingface.co/edmos7">huggingface.co/edmos7</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Eduardo Mosca — Crafted in neon and logic ⚡</p>
+  </footer>
+</body>
+</html>
