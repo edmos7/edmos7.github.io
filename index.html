@@ -5,142 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home | E. Mosca</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Share+Tech+Mono&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=IBM+Plex+Mono:wght@300;400&display=swap');
 
     body {
-      margin: 0;
-      background: radial-gradient(circle at top, #0a0015 0%, #020007 100%);
-      color: #e0d6ff;
-      font-family: 'Share Tech Mono', monospace;
+      background-color: #000;
+      color: #00ffe0;
+      font-family: 'Share Tech Mono', 'IBM Plex Mono', monospace;
+      font-size: 15px;
       line-height: 1.6;
+      margin: 0;
       padding: 2rem;
       max-width: 900px;
       margin-inline: auto;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    /* CRT scanline and flicker effect */
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      background: repeating-linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.03) 0px,
-        rgba(255, 255, 255, 0.03) 1px,
-        transparent 2px,
-        transparent 4px
-      );
-      mix-blend-mode: overlay;
-      animation: flicker 2s infinite steps(60);
-      z-index: 100;
-    }
-
-    @keyframes flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        opacity: 1;
-      }
-      20%, 24%, 55% {
-        opacity: 0.8;
-      }
+      letter-spacing: 0.5px;
     }
 
     header {
+      border-bottom: 1px solid rgba(0, 255, 200, 0.3);
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
       text-align: center;
-      margin-bottom: 3rem;
     }
 
     h1 {
-      font-family: 'Orbitron', sans-serif;
-      color: #ff3366;
-      font-size: 3rem;
-      text-shadow: 0 0 10px #ff0055, 0 0 20px #6600ff;
-      margin-bottom: 0.2rem;
+      font-size: 2rem;
+      color: #00ffe0;
+      margin: 0;
+      text-shadow: 0 0 6px rgba(0, 255, 200, 0.4);
+      letter-spacing: 1px;
     }
 
     header p {
-      color: #8b8bff;
-      font-size: 1.2rem;
-      text-shadow: 0 0 5px #4400aa;
+      margin-top: 0.3rem;
+      color: #33ffcc;
+      opacity: 0.85;
     }
 
     h2 {
-      color: #8b3eff;
+      color: #00d4b4;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-top: 3rem;
-      border-left: 4px solid #ff3366;
-      padding-left: 0.75rem;
-      text-shadow: 0 0 8px #8b3eff;
+      letter-spacing: 1.5px;
+      margin-top: 2.5rem;
+      border-left: 3px solid #00ffe0;
+      padding-left: 0.6rem;
+      text-shadow: 0 0 3px rgba(0, 255, 200, 0.3);
     }
 
     h3 {
-      color: #66aaff;
-      margin-top: 1.5rem;
-      text-shadow: 0 0 5px #0055ff;
+      color: #00bfa5;
+      margin-top: 1.2rem;
+      font-size: 1rem;
     }
 
     a {
-      color: #ff3366;
+      color: #00ffe0;
       text-decoration: none;
-      transition: all 0.3s ease;
     }
 
     a:hover {
-      color: #66aaff;
-      text-shadow: 0 0 10px #66aaff;
+      color: #bfffff;
+      text-shadow: 0 0 5px #00ffe0;
     }
 
     blockquote {
-      border-left: 3px solid #6600ff;
+      border-left: 2px solid #008f7a;
       padding-left: 1rem;
-      color: #ccc;
+      color: #8fffee;
+      opacity: 0.9;
       font-style: italic;
       margin: 1.5rem 0;
-      text-shadow: 0 0 3px #6600ff;
     }
 
     ul {
-      list-style-type: square;
-      padding-left: 1.5rem;
+      list-style-type: none;
+      padding-left: 1rem;
     }
 
-    li {
-      margin: 0.3rem 0;
+    li::before {
+      content: "> ";
+      color: #00ffe0;
+      opacity: 0.6;
     }
 
-    .neon-box {
-      border: 1px solid rgba(255, 51, 102, 0.3);
-      border-radius: 8px;
+    .section-box {
+      border: 1px solid rgba(0, 255, 200, 0.1);
+      background-color: rgba(0, 255, 200, 0.02);
       padding: 1rem;
-      margin-top: 1rem;
-      background: rgba(10, 0, 20, 0.3);
-      box-shadow: 0 0 12px rgba(255, 51, 102, 0.2), inset 0 0 20px rgba(100, 0, 200, 0.1);
+      border-radius: 4px;
+      margin-top: 0.5rem;
     }
 
     footer {
-      text-align: center;
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255, 51, 102, 0.2);
-      color: #666;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: #8b3eff;
-    }
-
-    .quote {
       margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0, 255, 200, 0.2);
+      color: #009f8a;
+      font-size: 0.9rem;
       text-align: center;
-      color: #555;
-      font-style: italic;
+      opacity: 0.8;
+    }
+
+    /* Subtle CRT-style flicker */
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.98; }
+    }
+
+    body {
+      animation: flicker 2s infinite;
+    }
+
+    ::selection {
+      background: #00ffe0;
+      color: #000;
     }
   </style>
 </head>
@@ -157,11 +134,11 @@
       I'm currently a MSc Data Science Student in Milan, Italy.  
       Computer science and AI are a big part of my life, and I hope to keep working close to these fields for a long time.  
       I have a lot of fun working on deep learning, especially when the results can be deployed in the real world and make a direct impact.  
-      A non-exhaustive list of AI areas in which I have a particular interest: Reinforcement Learning, World Models, Computer Vision, Robotics, Signal Processing.
+      Areas of particular interest: Reinforcement Learning, World Models, Computer Vision, Robotics, Signal Processing.
     </blockquote>
 
-    <h2>⚙️ Skills & Tools</h2>
-    <div class="neon-box">
+    <h2>Skills & Tools</h2>
+    <div class="section-box">
       <ul>
         <li><strong>Programming Languages:</strong> Python, R, SQL</li>
         <li><strong>Frameworks & Libraries (Python):</strong> PyTorch, TensorFlow, sklearn, numpy, pandas, gymnasium</li>
@@ -170,24 +147,24 @@
       </ul>
     </div>
 
-    <h2>🚀 Featured Projects</h2>
-    <div class="neon-box">
+    <h2>Featured Projects</h2>
+    <div class="section-box">
       <h3><a href="#">Project Title 1</a></h3>
       <p><em>(left empty to fill in later)</em></p>
       <p><strong>Tech Stack:</strong></p>
     </div>
 
-    <div class="neon-box">
+    <div class="section-box">
       <h3><a href="#">Project Title 2</a></h3>
       <p><em>(left empty to fill in later)</em></p>
       <p><strong>Tech Stack:</strong></p>
     </div>
 
-    <h2>🧠 Experience</h2>
-    <div class="neon-box">
+    <h2>Experience</h2>
+    <div class="section-box">
       <p><strong>Thesis Internship – DataReply</strong><br>
       <em>Aug '23 – Jan '24</em><br>
-      Developed program for systematically finding data quality anomaly patterns in any given dataset for better maintenance.<br>
+      Developed a program for systematically finding data quality anomaly patterns in any given dataset for better maintenance.<br>
       <strong>Tech Stack:</strong> Python (PyOD, sklearn, pandas), AWS, Docker, Databricks, Git
       </p>
 
@@ -198,8 +175,8 @@
       </p>
     </div>
 
-    <h2>🪩 Education</h2>
-    <div class="neon-box">
+    <h2>Education</h2>
+    <div class="section-box">
       <p><strong>MSc / Data Science</strong> – Università degli Studi di Milano-Bicocca<br>
       <em>September 2024 → Summer 2026 (at the earliest)</em><br>
       GPA: 29.33/30 (as of October 2025)
@@ -211,8 +188,8 @@
       </p>
     </div>
 
-    <h2>📫 Contact</h2>
-    <div class="neon-box">
+    <h2>Contact</h2>
+    <div class="section-box">
       <p>
         ✉️ <a href="mailto:eduamosca7@gmail.com">eduamosca7@gmail.com</a><br>
         🧱 <a href="https://github.com/edmos7">github.com/edmos7</a><br>
@@ -223,7 +200,8 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Eduardo Mosca — Crafted in neon and logic ⚡</p>
+    2025 - E. Mosca 
   </footer>
 </body>
 </html>
+
