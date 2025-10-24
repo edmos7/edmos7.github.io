@@ -3,7 +3,7 @@
 
 ---
 
-Portfolio website repo: edmos7.github.io
+Portfolio website repo: [edmos7.github.io](https://edmos7.github.io)
 
 ## 📫 Contact
 - ✉️ **Email:** [eduamosca7@gmail.com](mailto:eduamosca7@gmail.com)  
