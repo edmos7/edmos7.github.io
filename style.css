@@ -26,12 +26,18 @@ header p {
   margin: 5px 0 0;
   color: #d6c35b;
 }
-
 main {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
 }
+
+main section {
+  margin-bottom: 25px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 
 h2 {
   color: #e0cf74;
