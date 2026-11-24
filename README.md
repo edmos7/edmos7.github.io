@@ -1,16 +1,5 @@
 # Eduardo Mosca
-*AI and Computer Science*
 
----
+Personal website: research, projects, experience, and reading.
 
-Portfolio website repo: [edmos7.github.io](https://edmos7.github.io)
-
-## 📫 Contact
-- ✉️ **Email:** [eduamosca7@gmail.com](mailto:eduamosca7@gmail.com)  
-- 🧱 **GitHub:** [github.com/edmos7](https://github.com/edmos7)  
-- 💼 **LinkedIn:** [linkedin.com/in/eduardo-mosca/](https://linkedin.com/in/eduardo-mosca/)  
-- 🤗 **Huggingface** [huggingface.co/edmos7](https://huggingface.co/edmos7)
-
----
-
-
+Hosted on GitHub Pages at https://edmos7.github.io.

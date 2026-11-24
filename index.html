@@ -1,88 +1,134 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | E. Mosca</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Eduardo Mosca — research, projects, and notes on robot learning and applied AI.">
+  <meta name="color-scheme" content="dark">
+  <title>Eduardo Mosca · Research & projects</title>
+  <link rel="icon" href="assets/planetary-gyroscope-still.png" type="image/png">
+  <link rel="stylesheet" href="style.css?v=20261120-jetset-2">
+  <script src="script.js?v=20261120-2" defer></script>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <header>
-    <h1>Eduardo Mosca</h1>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="#home" aria-label="Eduardo Mosca — home"><img class="logo-gyroscope" src="assets/planetary-gyroscope.gif" alt="" width="144" height="120"></a>
+    <nav aria-label="Main navigation">
+      <a href="#research">Research</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#reading">Reading</a><a href="#about">About</a>
+    </nav>
   </header>
+  <main id="main">
+    <section id="home" class="hero frame">
+      <div class="hero-copy">
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <blockquote>
-        I'm currently a Data Science Student in Milan, Italy.   
-        I have a lot of fun working on deep learning, especially when the results can be deployed in the real world and make a direct impact.  
-        A non-exhaustive list of areas of AI I'm particularly interested in: Reinforcement Learning, Robot Learning, Computer Vision, Signal Processing.
-      </blockquote>
-      <a href="assets/cv.pdf" target="_blank">📄 My CV</a>
+        <h1>Eduardo Mosca</h1>
+        <div class="contact-links"><a href="https://linkedin.com/in/eduardo-mosca/">LinkedIn</a><a href="https://github.com/edmos7">GitHub</a><a href="https://huggingface.co/edmos7">Hugging Face</a><a href="assets/cv.pdf">CV (PDF)</a></div>
 
-      <br>
-      
-      <a href="https://linkedin.com/in/eduardo-mosca/" target="_blank">LinkedIn</a>
+
+        <div class="actions"><a class="button" href="#research">Explore research</a><a class="text-link" href="#projects">Browse projects</a></div>
+      </div>
 
 
     </section>
 
-    <section>
-      <h2>Project Spotlight</h2>
-      <div class="projects">
-        {% for project in site.projects %}
-        <div class="section-box">
-          <h3>{{ project.title }}</h3>
-          <p>{{ project.excerpt }}</p>
-          <a href="{{ project.url }}">Read more →</a>
+    <section id="research" class="section">
+      <div class="section-heading"><div><h2>Research & publications</h2></div></div>
+      <div class="research-list">
+        <article class="frame research-entry"><span class="tag">Poster · Presented at OxML 2026</span><h3>Diffusion-Trajectory: Trajectory-Sketch Conditioning for Low-Resource Robotic Manipulation</h3><p>Eduardo Mosca, Ionel Eduard Stan, Paolo Napoletano</p><a href="assets/papers/diffusion-trajectory-poster.pdf">Poster (PDF)</a></article>
+        <article class="frame research-entry"><div class="submission-meta"><strong class="submission-status">Submitted</strong><span class="tag">Extended abstract</span></div><h3>Embodied Chain-of-Thought Under Irrelevant Context in Vision-Language-Action Models</h3><p>Eduardo Mosca · 8th UK Conference on Robot Manipulation</p><div class="actions"><a href="assets/papers/embodied-chain-of-thought.pdf">Extended abstract (PDF)</a><a href="https://github.com/edmos7/embodied-CoT-vs-irrelevant-context">Code</a></div></article>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-heading"><div><h2>Projects</h2></div></div>
+      <div class="showcase">
+<article id="project-opentrajectory" class="frame showcase-project">
+<div class="project-media">
+<a href="assets/projects/trajectory.gif" aria-label="View Robot demonstration with tracked scene and gripper points"><img src="assets/projects/trajectory-still.png" data-animated-src="assets/projects/trajectory.gif" data-still-src="assets/projects/trajectory-still.png" alt="Robot demonstration with tracked scene and gripper points" loading="lazy"></a>
+</div>
+<div class="project-copy"><h3>OpenTrajectory</h3><p>Trajectory representations and policy training for robot manipulation with LeRobot.</p>
+<div class="project-links"><a href="https://github.com/edmos7/OpenTrajectory">Repository</a>
+<a href="assets/papers/diffusion-trajectory-poster.pdf">Related poster</a>
+</div></div></article>
+<article id="project-semanticflow" class="frame showcase-project">
+<div class="project-media media-pair">
+<a href="assets/projects/semantic-human.gif" aria-label="View Human demonstration placing objects in a box"><img src="assets/projects/semantic-human-still.png" data-animated-src="assets/projects/semantic-human.gif" data-still-src="assets/projects/semantic-human-still.png" alt="Human demonstration placing objects in a box" loading="lazy"></a>
+<a href="assets/projects/semantic-robot.gif" aria-label="View Robot task demonstration in LIBERO"><img src="assets/projects/semantic-robot-still.png" data-animated-src="assets/projects/semantic-robot.gif" data-still-src="assets/projects/semantic-robot-still.png" alt="Robot task demonstration in LIBERO" loading="lazy"></a>
+</div>
+<div class="project-copy"><h3>SemanticFlow</h3><p>Exploring whether scene changes learned from human video can guide robot actions. Benefit remains unproven.</p>
+<p class="media-caption">Human and robot task demonstrations</p>
+<div class="project-links"><a href="https://github.com/edmos7/SemanticFlow">Repository</a>
+</div></div></article>
+<article id="project-ecot" class="frame showcase-project">
+<div class="project-media">
+<a href="assets/projects/ecot-overview-stacked.png" aria-label="View Embodied Chain-of-Thought overview and comparison with task-irrelevant context"><img src="assets/projects/ecot-overview-stacked.png" alt="Embodied Chain-of-Thought overview and comparison with task-irrelevant context" loading="lazy"></a>
+</div>
+<div class="project-copy"><h3>Embodied Chain-of-Thought</h3><p>Studying how irrelevant context disrupts the reasoning format of vision-language-action models.</p>
+<div class="project-links"><a href="https://github.com/edmos7/embodied-CoT-vs-irrelevant-context">Repository</a>
+<a href="assets/papers/embodied-chain-of-thought.pdf">Extended abstract</a>
+</div></div></article>
+<article id="project-graphslam" class="frame showcase-project">
+<div class="project-media">
+<a href="assets/projects/graphslam.png" aria-label="View Reconstructed point-cloud map and vehicle trajectory"><img src="assets/projects/graphslam.png" alt="Reconstructed point-cloud map and vehicle trajectory" loading="lazy"></a>
+</div>
+<div class="project-copy"><h3>GraphSLAM</h3><p>Reconstructing a vehicle’s trajectory and surroundings from LiDAR and inertial data. Loop closure is not yet implemented.</p>
+<div class="project-links"><a href="https://github.com/edmos7/graphslam-kit-velodyne">Repository</a>
+</div></div></article>
+<article id="project-object-detection" class="frame showcase-project">
+<div class="project-copy"><h3>Object detection</h3><p>A YOLOv1-inspired detector with a MobileNetV2 backbone, trained on Pascal VOC.</p>
+<p class="media-caption">With R. Bosoni de Martini · Equal contribution</p>
+<div class="project-links"><a href="https://github.com/edmos7/yolo-detector-transfer-finetune">Repository</a>
+<a href="https://huggingface.co/spaces/edmos7/yolo-voc-detection-demo">Interactive demo</a>
+</div></div></article>
+<article id="project-plant-classifier" class="frame showcase-project">
+<div class="project-copy"><h3>Plant disease classification</h3><p>Classifying plant diseases with compressed models using quantization and pruning.</p>
+<div class="project-links"><a href="https://github.com/edmos7/image-classfier-and-model-compression">Repository</a>
+<a href="https://huggingface.co/spaces/edmos7/plant-leaf-classifier">Interactive demo</a>
+</div></div></article>
+</div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="section-heading"><div><h2>Experience</h2></div></div>
+      <div class="career frame">
+
+        <div class="tree">
+          <details open><summary><span class="period">2024–2027</span><span class="folder">masters/</span><span class="summary-label">MSc · Data Science</span></summary><div class="branch"><p class="institution">Università degli Studi di Milano-Bicocca · Expected graduation March 2027</p>
+            <div class="tree-leaf"><span class="leaf-date">Sep 2026 – Mar 2027 · ongoing</span><h3>AI Intern · European Space Agency</h3><p>Darmstadt, Germany · Space robotics, digital twins, agentic systems</p></div>
+            <div class="tree-leaf"><span class="leaf-date">Mar – Aug 2026</span><h3>Research Intern · Intelligent Sensing Lab</h3><p>Milano-Bicocca · Robot learning and brain-computer interfaces</p></div>
+            <div class="tree-leaf"><span class="leaf-date">2026</span><h3>OxML · GenAI &amp; Representation Learning</h3><p>Diffusion-Trajectory poster presentation</p></div><div class="tree-leaf"><span class="filename">research/</span><p><a href="#research">Posters &amp; extended abstracts</a></p></div></div></details>
+          <details open><summary><span class="period">2021–2024</span><span class="folder">bachelors/</span><span class="summary-label">BSc · Management and Computer Science</span></summary><div class="branch"><p class="institution">LUISS Guido Carli</p><div class="tree-leaf"><span class="leaf-date">Aug 2023 – Jan 2024</span><h3>IT Consultant Intern</h3><p>DataReply</p></div><div class="tree-leaf"><span class="leaf-date">Jun – Jul 2023</span><h3>Intern Software Developer</h3><p>Integrated Aerospace Systems</p></div></div></details>
         </div>
-        {% endfor %}
+
       </div>
     </section>
 
-    <section>
-      <h2>Education</h2>
-      <div class="section-box">
-        <p><strong>MSc / Data Science</strong> – Università degli Studi di Milano-Bicocca<br>
-        <em>September 2024 → 2026 </em><br>
-        </p>
-
-        <p><strong>BSc / Management and Computer Science</strong> – LUISS Guido Carli<br>
-        <em>September 2021 → July 2024</em><br>
-        </p>
-      </div>
-    </section>
-    
-    <section>
-      <h2>Experience</h2>
-      <div class="section-box">
-        <p><strong>Thesis Internship – DataReply</strong><br>
-        <em>Aug '23 – Jan '24</em><br>
-        </p>
-
-        <p><strong>Intern Software Developer – Integrated Aerospace Systems</strong><br>
-        <em>Jun '23 – Jul '23</em><br>
-        </p>
-      </div>
+    <section id="reading" class="section">
+      <div class="section-heading"><div><h2>Papers recently read</h2></div></div>
+      <ul class="reading-panel frame reading-list">
+        <li><h3>Data Pyramid for Embodied Manipulation</h3><p class="reading-venue">arXiv preprint · 2026</p><a href="https://arxiv.org/abs/2607.24744">https://arxiv.org/abs/2607.24744</a></li>
+        <li><h3>FoundationStereo: Zero-Shot Stereo Matching</h3><p class="reading-venue">CVPR 2025</p><a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Wen_FoundationStereo_Zero-Shot_Stereo_Matching_CVPR_2025_paper.pdf">https://openaccess.thecvf.com/content/CVPR2025/papers/Wen_FoundationStereo_Zero-Shot_Stereo_Matching_CVPR_2025_paper.pdf</a></li>
+        <li><h3>StereoSplat: Metric-Scale Novel View Synthesis via Stereo-Grounded Gaussian Splatting</h3><p class="reading-venue">NeurIPS 2026</p><a href="https://arxiv.org/abs/2610.35902">https://arxiv.org/abs/2610.35902</a></li>
+        <li><h3>Emerging Properties in Self-Supervised Vision Transformers</h3><p class="reading-venue">ICCV 2021</p><a href="https://arxiv.org/abs/2104.14294">https://arxiv.org/abs/2104.14294</a></li>
+        <li><h3>Bootstrap Your Own Latent: A New Approach to Self-Supervised Learning</h3><p class="reading-venue">NeurIPS 2020</p><a href="https://arxiv.org/abs/2006.07733">https://arxiv.org/abs/2006.07733</a></li>
+        <li><h3>A Simple Framework for Contrastive Learning of Visual Representations</h3><p class="reading-venue">ICML 2020</p><a href="https://proceedings.mlr.press/v119/chen20j.html">https://proceedings.mlr.press/v119/chen20j.html</a></li>
+        <li><h3>RoboJEPA: Scaling Robotic Latent World Models</h3><p class="reading-venue">arXiv preprint · 2026</p><a href="https://arxiv.org/abs/2610.10515">https://arxiv.org/abs/2610.10515</a></li>
+      </ul>
     </section>
 
+    <section id="about" class="section">
+      <div class="section-heading"><div><h2>About me</h2></div></div>
+      <div class="about-grid">
+        <div class="frame about-panel">
+          <p>I'm passionate about ML and Deep Learning above all, with applications in robotics and computer vision.</p>
+          <p>I'm interested in data mixtures and representations for robot learning, combining behavior cloning or video pretraining with reinforcement learning post training for robotic action, dual systems combining lower level policies with an agentic component, and implementing all of the above on hardware.</p>
+          <p>My goal is to be able to take part in cool and ambitious projects that improve over what's possible today, and to keep on learning along the way.</p>
+        </div>
 
+      </div>
+    </section>
   </main>
-
-  <footer>
-    &copy; 2025 Eduardo Mosca
-  </footer>
+  <footer><span>Eduardo Mosca <span class="blue">/</span> research & projects</span><a href="#home">Back to top</a></footer>
 </body>
 </html>
-
-
-
