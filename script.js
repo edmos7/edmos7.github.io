@@ -70,3 +70,39 @@ setInterval(() => {
   });
 }, 120);
 reducedMotion.addEventListener('change', () => outlines.forEach(drawOutline));
+
+// Lightweight event beacon for PDF downloads, outbound clicks, and time on page.
+const ANALYTICS_ENDPOINT = 'https://edmos7-analytics.edmos7.workers.dev/event';
+const pageStart = Date.now();
+let durationSent = false;
+
+function sendEvent(type, detail = {}) {
+  if (!ANALYTICS_ENDPOINT || ANALYTICS_ENDPOINT.includes('YOUR_SUBDOMAIN')) return;
+  const payload = JSON.stringify({
+    type,
+    path: location.pathname + location.hash,
+    ...detail,
+    ts: new Date().toISOString(),
+  });
+  navigator.sendBeacon(ANALYTICS_ENDPOINT, new Blob([payload], { type: 'application/json' }));
+}
+
+document.addEventListener('click', event => {
+  const link = event.target.closest('a[href]');
+  if (!link) return;
+  const href = link.getAttribute('href') || '';
+  if (href.toLowerCase().endsWith('.pdf')) {
+    sendEvent('pdf_download', { target: href, label: link.textContent.trim() });
+  } else if (href.startsWith('http') && !href.includes(location.hostname)) {
+    sendEvent('outbound_click', { target: href, label: link.textContent.trim() });
+  } else if (href.startsWith('#')) {
+    sendEvent('section_nav', { target: href });
+  }
+});
+
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden' && !durationSent) {
+    durationSent = true;
+    sendEvent('time_on_page', { seconds: Math.round((Date.now() - pageStart) / 1000) });
+  }
+});
